@@ -9,10 +9,9 @@ let todoModel = new Schema({
     type: String,
     default: 'pendente'
   },
-},
-{ collection: 'todos' }
-);
+}, { collection: 'todos' });
 
+// Source: https://masteringjs.io/tutorials/mongoose/timestamps
 todoModel.set('timestamps', {
   createdAt: true
 });

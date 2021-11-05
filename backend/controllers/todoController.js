@@ -1,14 +1,16 @@
-const express = require('express');
-const todoModel = require('../models/todoModel');
+// Source: https://remotestack.io/how-to-build-react-mern-stack-todo-crud-application/
 
+const express = require('express');
 const todoRouter = express.Router();
+
+const todoModel = require('../models/todoModel');
 
 todoRouter.get('/', (req, res, next) => {
   todoModel.find((error, data) => {
     if (error) {
       return next(error);
     } else {
-      console.log(data);
+      // console.log(data);
       return res.status(200).json(data);
     }
   });
@@ -19,7 +21,7 @@ todoRouter.post('/create-todo', (req, res, next) => {
     if (error) {
       return next(error);
     } else {
-      console.log(data);
+      // console.log(data);
       return res.status(201).json(data);
     }
   });
@@ -30,7 +32,7 @@ todoRouter.get('/edit-todo/:id', (req, res, next) => {
     if (error) {
       return next(error);
     } else {
-      console.log(data);
+      // console.log(data);
       return res.status(200).json(data);
     }
   });
@@ -41,7 +43,7 @@ todoRouter.put('/update-todo/:id', (req, res, next) => {
     if (error) {
       return next(error);
     } else {
-      console.log('Todo updated');
+      // console.log('Todo updated');
       return res.status(200).json(data);
     }
   });
@@ -52,7 +54,7 @@ todoRouter.delete('/delete-todo/:id', (req, res, next) => {
     if (error) {
       return next(error);
     } else {
-      console.log(data);
+      // console.log(data);
       return res.status(204).json({ msg: data });
     }
   });
