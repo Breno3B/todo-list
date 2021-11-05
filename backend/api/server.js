@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { todoRouter } = require('../controllers/todoController');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 3013;
@@ -13,7 +14,7 @@ app.use(express.urlencoded({
 
 app.use(cors());
 
-app.use('/api', todoRoute);
+app.use('/api', todoRouter);
 
 app.listen(PORT, () => console.log(`conectado na porta ${PORT}`));
 
