@@ -3,10 +3,12 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
+import AddTodo from './components/addTodo';
+
 function App() {
   return (
     <div className="App container mt-5">
-      <h1>Lista de Tarefas</h1>
+      <AddTodo />
     </div>
   );
 }
